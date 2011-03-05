@@ -34,11 +34,17 @@ for genre, genre_code in genres.iteritems():
         while i < len(a) and a[i]['name'] in movies_already:
             i += 1
         if i != len(a):
+            cover = ""
+            mid = ""
             if len(a[i]['images']) > 0:
                 cover = a[i]['images'][0]['cover']
-            else:
-                cover = ""
+                try:
+                    mid = a[i]['images'][0]['mid']
+                except KeyError, e:
+                    pass
+
             movies[genre][year]['cover'] = cover
+            movies[genre][year]['mid'] = mid
             movies[genre][year]['name'] =  a[i]['name']
             # print "%s in %s: %s (%s)" % (genre, year, a[i]['name'], pic)
             movies_already.add(a[i]['name']) 

@@ -31,12 +31,12 @@ p {
   z-index: 10;
 }
 #shadow-top {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
   top: 30px;
 }
 #shadow-bottom {
   bottom: 0;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
 }
 
 #shadow-left, #shadow-right {
@@ -47,11 +47,11 @@ p {
 }
 #shadow-left {
   left: 0;
-  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
 }
 #shadow-right {
-    right: 400px;
-    background-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+    right: 250px;
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
 }
 
 
@@ -101,12 +101,13 @@ p {
 
 .row-label, .col-label-text {
   position: absolute;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: bold;
   color: white;
   background-color: black;
+  border: 1px solid #aaa;
   padding: 5px 8px;
-  border-radius: 5px;
+  border-radius: 6px;
   opacity: 0.8;
 }
 .row-label {
@@ -118,7 +119,7 @@ p {
 /*  -webkit-transform: rotate(-90deg);*/
 /* -moz-transform: rotate(-90deg);*/
 /* writing-mode: tb-rl;*/
-  margin: 150px auto;
+  margin: 160px auto;
   
 }
 
@@ -143,17 +144,21 @@ p {
   z-index: 1;
   position: absolute;
 /*  background-image: url("/static/images/the-dilemma-original.jpeg");*/
-  overflow: hidden;
+/*  overflow: hidden;*/
   text-align: center;
+/*  background-color: transparent;*/
 }
-.movie img {
+.movie.middle img {
   margin: 0 auto;
 }
 .movie.middle {
-  margin-left: -20px;
-  margin-top: -20px;
+  margin-left: -30px;
+  margin-top: -30px;
   z-index: 2;
+}
+.movie.middle img {
   -webkit-box-shadow: 0 0 10px 5px black;
+  border: 1px solid white;
 }
 
 
@@ -164,14 +169,22 @@ p {
   top: 30px;
   right: 0;
   bottom: 0;
-  width: 400px;
-  background-color: #999;
+  width: 249px;
+  border-left: 1px solid #555;
+  background-color: black;
+}
+#detail-side .inner {
+  margin: 10px;
+}
+#title {
+  font-weight: bold;
+  color: white;
+  font-size: 24px;
+  line-height: 26px;
 }
 
 #bigposter {
-  float: left;
   background-color: #333;
-  width: 185px;
-  height: 274px;
-  margin: 0 10px 10px 0;
+  margin-bottom: 20px;
+  width: 100%;
 }
