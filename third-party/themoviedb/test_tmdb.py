@@ -7,6 +7,13 @@
 
 import tmdb
 
+def test_simple_browse():
+    """Simple borwse search
+    """
+    t = tmdb.MovieDb()
+    sr = t.browse(year="2007", per_page=3, page=1)
+    assert isinstance(sr, tmdb.SearchResults)
+    assert sr[0]['released'].split("-")[0] == "2007" 
 
 def test_simple_search():
     """Simple test search

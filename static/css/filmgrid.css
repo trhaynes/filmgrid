@@ -139,39 +139,21 @@ p {
   left: 0;
 }
 
-
-.overlay {
-  position: absolute;
-/*  background-color: black;
-  opacity: 0.5;
-  -moz-opacity: 0.5;
-  filter:alpha(opacity=50);*/
-}
-
 .movie {
   z-index: 1;
   position: absolute;
 /*  background-image: url("/static/images/the-dilemma-original.jpeg");*/
   overflow: hidden;
+  text-align: center;
+}
+.movie img {
+  margin: 0 auto;
 }
 .movie.middle {
-  -webkit-box-shadow: 0 0 10px 5px #ccc;
-}
-
-#movie1 {
-  opacity
-  left: 0;
-  top: 0;
-}
-
-#movie2 {
-  left: 100px;
-  top: 0;
-}
-
-#movie3 {
-  left: 200px;
-  top: 0;
+  margin-left: -20px;
+  margin-top: -20px;
+  z-index: 2;
+  -webkit-box-shadow: 0 0 10px 5px black;
 }
 
 

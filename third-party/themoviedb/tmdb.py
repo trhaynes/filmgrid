@@ -14,6 +14,8 @@ config = {}
 config['apikey'] = "3e7807c4a01f18298f64662b257d7059"
 config['urls'] = {}
 config['urls']['movie.search'] = "http://api.themoviedb.org/2.1/Movie.search/en/xml/%(apikey)s/%%s" % (config)
+# http://api.themoviedb.org/2.1/Movie.browse/en-US/xml/APIKEY?order_by=rating&order=desc&genres=18&min_votes=5&page=1&per_page=10
+config['urls']['movie.browse'] = "http://api.themoviedb.org/2.1/Movie.browse/en-US/xml/%(apikey)s?%%s" % (config)
 config['urls']['movie.getInfo'] = "http://api.themoviedb.org/2.1/Movie.getInfo/en/xml/%(apikey)s/%%s" % (config)
 config['urls']['media.getInfo'] = "http://api.themoviedb.org/2.1/Media.getInfo/en/xml/%(apikey)s/%%s/%%s" % (config)
 config['urls']['imdb.lookUp'] = "http://api.themoviedb.org/2.1/Movie.imdbLookup/en/xml/%(apikey)s/%%s" % (config)
@@ -310,6 +312,22 @@ class MovieDb:
             search_results.append(cur_movie)
         return search_results
     
+    def browse(self, **kwargs):
+        q = ""
+        valid_args = ["order_by", "order", "per_page", "page", "query", "min_votes", \
+                     "rating_min", "rating_max", "genres", "genres_selector", "release_min" \
+                     "release_max", "year", "certifications", "companies", "countries"]
+        for arg in valid_args:          
+            if arg in kwargs:
+                q += "%s=%s&" % (arg, kwargs[arg])
+        url = config['urls']['movie.browse'] % (q)
+        etree = XmlHandler(url).getEt()
+        search_results = SearchResults()
+        for cur_result in etree.find("movies").findall("movie"):
+            cur_movie = self._parseSearchResults(cur_result)
+            search_results.append(cur_movie)
+        return search_results 
+        
     def getMovieInfo(self, id):
         """Returns movie info by it's TheMovieDb ID.
         Returns a Movie instance
@@ -520,6 +538,11 @@ def search(name):
     """
     mdb = MovieDb()
     return mdb.search(name)
+def browse(**kwargs):
+    """Convenience wrapper for MovieDb.browse - so you can do..
+    """
+    mdb = MovieDb()
+    return mdb.browse(**kwargs)
 def getMovieInfo(id):
     """Convenience wrapper for MovieDb.search - so you can do..
     >>> import tmdb

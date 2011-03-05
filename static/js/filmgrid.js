@@ -4,20 +4,29 @@ var scale = 1.8;
 var movie_w = 80*scale;
 var movie_h = 110*scale;
 
+var middle_w = movie_w + 40;
+var middle_h = movie_h + 40;
+
+$("<style type='text/css'> .middle { width: "+middle_w+"px !important; height: "+middle_h+"px !important } .middle img { height: "+middle_h+"px !important; } </style>").appendTo("head");
+
+
 var sep_x = 15;
 var sep_y = 15;
 
 var move_x = movie_w+sep_x;
 var move_y = movie_h+sep_y;
 
-var movies_tall = 9; // has to be odd
-var movies_wide = 15;
+var row_labels = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010"];
+var col_labels = ["History", "Action", "Adventure", "Comedy", "Thriller", "Musical", "Science Fiction"];
+
+var movies_tall = row_labels.length;
+var movies_wide = col_labels.length;
+
+var middle_x = parseInt(movies_wide/2);
+var middle_y = parseInt(movies_tall/2);
 
 var grid_mover_w = sep_x*(movies_wide+1) + movie_w*movies_wide; 
 var grid_mover_h = sep_y*(movies_tall+1) + movie_h*movies_tall; 
-
-var row_labels = ["2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"];
-var col_labels = ["Action", "Romance", "Comedy", "Documentary", "Children's", "Mystery", "Horror", "Sci-Fi", "Indie", "Foo", "Bar", "XX", "YY", "ZZ", "AA", "BB", "CC"];
 
 $(document).ready(function() {
   
@@ -25,15 +34,21 @@ $(document).ready(function() {
 
   for(var i=0;i<movies_wide;i++) {
     for(var j=0;j<movies_tall;j++) {
-      var $movie = $('<div class="movie row'+i+'_col'+j+'" ><div class="overlay"></div>'+i+','+j+'</div>');
+      var $movie = $('<div class="movie row'+i+'_col'+j+'" ></div>');
       $movie.css({"left" : sep_x + (movie_w+sep_x)*i, "top" : sep_y + (movie_h+sep_y)*j});
       $movie.css({"width" : movie_w, "height" : movie_h});
-      $movie_img = $('<img>').attr("src", "/static/images/the-dilemma-original.jpeg");
-      $movie.append($movie_img);
-      if(i == parseInt(movies_wide/2) && j == parseInt(movies_tall/2)) {
-        $movie.addClass("middle");
+      var genre = col_labels[i];
+      var year = row_labels[j];
+      console.log(genre);
+      console.log(year);
+      if(movies[genre][year]['cover']) {
+        $movie_img = $('<img>').attr("src", movies[genre][year]['cover']).css("height", movie_h+"px");
+        $movie.append($movie_img);
+        if(i == middle_x && j == middle_y) {
+          $movie.addClass("middle");
+        }
+        $("#grid-mover").append($movie);
       }
-      $("#grid-mover").append($movie);
     }
   }
 
@@ -76,20 +91,30 @@ $(document).ready(function() {
   $("body").keydown(function(event) {
     var new_left = parseInt($("#grid-mover").css("left").replace("px", ""));
     var new_top = parseInt($("#grid-mover").css("top").replace("px", ""));    
-    if(event.keyCode == 37) {
-      new_left = new_left - move_x;
-    } else if(event.keyCode == 38) {
-      new_top = new_top - move_y;
-    } else if(event.keyCode == 39) {
-      new_left = new_left + move_x;
-    } else if(event.keyCode == 40) {
-      new_top = new_top + move_y;
+    if(event.keyCode >= 37 && event.keyCode <= 40) {
+      $(".movie").removeClass("middle");
+      if(event.keyCode == 37) {
+        new_left = new_left - move_x;
+        middle_x++;
+      } else if(event.keyCode == 38) {
+        new_top = new_top - move_y;
+        middle_y++;
+      } else if(event.keyCode == 39) {
+        new_left = new_left + move_x;
+        middle_x--;
+      } else if(event.keyCode == 40) {
+        new_top = new_top + move_y;
+        middle_y--;
+      }
+      var animate_speed = 250;
+      $("#grid-mover").animate({"left": new_left, "top": new_top}, animate_speed);
+      $("#row-labels-mover").animate({"top": new_top}, animate_speed);   
+      $("#col-labels-mover").animate({"left": new_left}, animate_speed, function() {
+        $(".movie.row"+middle_x+"_col"+middle_y).addClass("middle");
+      });
+      return false; 
     }
-    var animate_speed = 250;
-    $("#grid-mover").animate({"left": new_left, "top": new_top}, animate_speed);
-    $("#row-labels-mover").animate({"top": new_top}, animate_speed);   
-    $("#col-labels-mover").animate({"left": new_left}, animate_speed);   
-    return false; 
+    return true;
   });
   
 });
