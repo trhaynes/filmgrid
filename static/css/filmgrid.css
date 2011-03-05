@@ -1,0 +1,195 @@
+body {
+  font: 13px/15px Helvetica, sans-serif;
+  color: #333;
+  margin: 0; padding: 0;
+}
+
+#header {
+  height: 30px;
+  background-color: #999;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+
+
+#grid-side {
+  background-color: black;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  bottom: 0;
+
+}
+
+#shadow-top, #shadow-bottom {
+  position: absolute;
+  left: 0;
+  height: 200px;
+  z-index: 10;
+}
+#shadow-top {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+  top: 30px;
+}
+#shadow-bottom {
+  bottom: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+}
+
+#shadow-left, #shadow-right {
+  position: absolute;
+  top: 30px;
+  width: 200px;
+  z-index: 10;
+}
+#shadow-left {
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+}
+#shadow-right {
+    right: 400px;
+    background-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,0.8)), to(rgba(0,0,0,0.0)));
+}
+
+
+
+/* ROW AND COLUMN LABELS*/
+
+#row-labels, #col-labels {
+  position: absolute;
+  overflow: hidden;
+  z-index: 15;
+  bottom: 0;
+  background-color: transparent;
+
+}
+#row-labels {
+  top: 0;
+  width: 200px;
+}
+#col-labels {
+  left: 0;
+  height: 200px;
+}
+
+/* MOVERS */
+
+#row-labels-mover, #col-labels-mover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#row-labels-mover {
+  width: 200px;
+}
+#col-labels-mover {
+  height: 200px;
+}
+
+
+/* LABELS */
+
+.col-label {
+  height: 200px;
+  position: absolute;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.row-label, .col-label-text {
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  color: white;
+  background-color: black;
+  padding: 5px 8px;
+  border-radius: 5px;
+  opacity: 0.8;
+}
+.row-label {
+  margin-left: 20px;
+}
+.col-label-text {
+  display: inline-block;
+  position: relative;
+/*  -webkit-transform: rotate(-90deg);*/
+/* -moz-transform: rotate(-90deg);*/
+/* writing-mode: tb-rl;*/
+  margin: 150px auto;
+  
+}
+
+/* GRID */
+
+#grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#grid-mover {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.overlay {
+  position: absolute;
+/*  background-color: black;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+  filter:alpha(opacity=50);*/
+}
+
+.movie {
+  z-index: 1;
+  position: absolute;
+/*  background-image: url("/static/images/the-dilemma-original.jpeg");*/
+  overflow: hidden;
+}
+.movie.middle {
+  -webkit-box-shadow: 0 0 10px 5px #ccc;
+}
+
+#movie1 {
+  opacity
+  left: 0;
+  top: 0;
+}
+
+#movie2 {
+  left: 100px;
+  top: 0;
+}
+
+#movie3 {
+  left: 200px;
+  top: 0;
+}
+
+
+
+
+#detail-side {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  background-color: #999;
+}
+
+#bigposter {
+  float: left;
+  background-color: #333;
+  width: 185px;
+  height: 274px;
+  margin: 0 10px 10px 0;
+}
