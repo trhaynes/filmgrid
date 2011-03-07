@@ -21,7 +21,13 @@ var FilmGrid = (function() {
   var move_x = movie_w+sep_x; // amount to move when moving horizontally
   var move_y = movie_h+sep_y; // amount to move when moving vertically
   
-  var col_labels = ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010"];
+  var start_year = 1990;
+  var end_year = 2011;
+  
+  col_labels = [];
+  for(var i=start_year;i<end_year;i++) {
+    col_labels.push(String(i));
+  }
   var row_labels = ["History", "Action", "Adventure", "Comedy", "Thriller", "Musical", "Science Fiction"];
 
   var movies_tall = row_labels.length;
@@ -134,11 +140,10 @@ var FilmGrid = (function() {
     resize: function() {
       console.log("resize");
 
-      // static, really should go elsewhere
+      // XXX these are static, really should go elsewhere
       $("#header").height(header_height);
       $("#grid-mover").width(grid_mover_w).height(grid_mover_h);
 
-      
       $("#grid, #grid-side").width($(document).width()-detail_width);      
       $("#detail-side").width(detail_width);
       
