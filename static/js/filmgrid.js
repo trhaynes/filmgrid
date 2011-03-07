@@ -78,22 +78,26 @@ var FilmGrid = (function() {
   };
   
   function move(direction) {
-    $(".movie").removeClass("middle");
     var left = parseInt($("#grid-mover").css("left").replace("px", ""));
     var top = parseInt($("#grid-mover").css("top").replace("px", "")); 
     if(direction == "left") {
+      if(middle_x == 0) return;
       left = left + move_x;
       middle_x--;
     } else if(direction == "right") {
+      if(middle_x == movies_wide-1) return;
       left = left - move_x;
       middle_x++;     
     } else if(direction == "up") {
+      if(middle_y == 0) return;
       top = top + move_y;
       middle_y--;     
     } else if(direction == "down") {
+      if(middle_y == movies_tall-1) return;
       top = top - move_y;
       middle_y++;
     }
+    $(".movie").removeClass("middle");
     $("#grid-mover").animate({"left": left, "top": top}, move_speed);
     $("#row-labels-mover").animate({"top": top}, move_speed);   
     $("#col-labels-mover").animate({"left": left}, move_speed, function() {
