@@ -5,7 +5,6 @@ body {
 }
 
 #header {
-  height: 30px;
   background-color: #999;
 }
 
@@ -14,14 +13,11 @@ p {
 }
 
 
-
 #grid-side {
   background-color: black;
   position: absolute;
-  top: 30px;
   left: 0;
   bottom: 0;
-
 }
 
 #shadow-top, #shadow-bottom {
@@ -32,7 +28,6 @@ p {
 }
 #shadow-top {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
-  top: 30px;
 }
 #shadow-bottom {
   bottom: 0;
@@ -41,7 +36,6 @@ p {
 
 #shadow-left, #shadow-right {
   position: absolute;
-  top: 30px;
   width: 200px;
   z-index: 10;
 }
@@ -166,12 +160,12 @@ p {
 
 #detail-side {
   position: absolute;
-  top: 30px;
   right: 0;
   bottom: 0;
   width: 249px;
   border-left: 1px solid #555;
   background-color: black;
+  z-index: 200;
 }
 #detail-side .inner {
   margin: 10px;
@@ -187,4 +181,5 @@ p {
   background-color: #333;
   margin-bottom: 20px;
   width: 100%;
+  border: 1px solid white;
 }
