@@ -172,9 +172,6 @@ var FilmGrid = (function() {
             
       $("#grid-side, #detail-side, #shadow-left, \
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
-
-      // var t = -1*(grid_mover_h - $("#grid").height())/2.0;  
-      // var l = -1*(grid_mover_w - $("#grid").width())/2.0;
       
       var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y) + sep_y + movie_h/2.0;
       var l = $("#grid").width()/2.0 -  (middle_x+1)*(movie_w+sep_x) + sep_x + movie_w/2.0;
