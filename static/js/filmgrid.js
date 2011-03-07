@@ -24,7 +24,7 @@ var FilmGrid = (function() {
   
   // width of thumbnails
   var movie_w = 148;
-  var movie_h = parseInt(movie_w*1.5);
+  var movie_h = movie_w*1.5027;
   
   // the middle film thumbnail is larger
   var middle_bigger_by = 60;
@@ -83,26 +83,26 @@ var FilmGrid = (function() {
     var left = parseInt($("#grid-mover").css("left").replace("px", ""));
     var top = parseInt($("#grid-mover").css("top").replace("px", "")); 
     if(direction == "left") {
-      if(middle_x == 0) return;
+      if(middle_x == 0) { currently_moving = false; return; }
       left = left + move_x;
       middle_x--;
     } else if(direction == "right") {
-      if(middle_x == movies_wide-1) return;
+      if(middle_x == movies_wide-1) { currently_moving = false; return; }
       left = left - move_x;
       middle_x++;     
     } else if(direction == "up") {
-      if(middle_y == 0) return;
+      if(middle_y == 0) { currently_moving = false; return; }
       top = top + move_y;
       middle_y--;     
     } else if(direction == "down") {
-      if(middle_y == movies_tall-1) return;
+      if(middle_y == movies_tall-1) { currently_moving = false; return; }
       top = top - move_y;
       middle_y++;
     }
-    $(".movie").removeClass("middle");
-    $("#grid-mover").animate({"left": left, "top": top}, move_speed);
+    $(".movie.middle").removeClass("middle");
     $("#row-labels-mover").animate({"top": top}, move_speed);   
-    $("#col-labels-mover").animate({"left": left}, move_speed, function() {
+    $("#col-labels-mover").animate({"left": left}, move_speed);
+    $("#grid-mover").animate({"left": left, "top": top}, move_speed, function() {
       $(".movie.row"+middle_x+"_col"+middle_y).addClass("middle");
       currently_moving = false;
     });
@@ -113,6 +113,9 @@ var FilmGrid = (function() {
       $("#title").html(movies[genre][year]['name']);
       $("#detail-side .inner").fadeIn("fast");
     });
+
+    
+
   }
   
   return {
@@ -120,10 +123,10 @@ var FilmGrid = (function() {
     // public
     
     init: function() {
-      console.log("init");
       $("<style type='text/css'> \
-        .middle { width: "+middle_w+"px !important; height: "+middle_h+"px !important } \
-        .middle img { height: "+middle_h+"px !important; } \
+        .movie img { max-width: "+movie_w+"px; } \
+        .middle { width: "+middle_w+"px !important; height: "+middle_h+"px !important; } \
+        .middle img { max-height: "+middle_h+"px !important; max-width: "+middle_w+" !important; } \
       </style>").appendTo("head");
     },
     
@@ -137,7 +140,7 @@ var FilmGrid = (function() {
           var year = col_labels[i];
           var genre = row_labels[j];
           if(movies[genre][year]['cover']) {
-            $movie_img = $('<img>').attr("src", movies[genre][year]['cover']).css("height", movie_h+"px");
+            $movie_img = $('<img>').attr("src", movies[genre][year]['cover']);
             $movie.append($movie_img);
             if(i == middle_x && j == middle_y) {
               $movie.addClass("middle");
