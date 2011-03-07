@@ -20,7 +20,7 @@ var FilmGrid = (function() {
 
   // private
   
-  var move_speed = 250;
+  var move_speed = 200;
   
   // width of thumbnails
   var movie_w = 148;
@@ -57,6 +57,8 @@ var FilmGrid = (function() {
   
   var detail_width = 250; // width of detail side
   var header_height = 30; // height of header
+  
+  var currently_moving = false;
   
   function draw_row_labels() {
     for(var i=0;i<movies_tall;i++) {
@@ -102,6 +104,7 @@ var FilmGrid = (function() {
     $("#row-labels-mover").animate({"top": top}, move_speed);   
     $("#col-labels-mover").animate({"left": left}, move_speed, function() {
       $(".movie.row"+middle_x+"_col"+middle_y).addClass("middle");
+      currently_moving = false;
     });
     var genre = row_labels[middle_y];
     var year = col_labels[middle_x];
@@ -110,11 +113,6 @@ var FilmGrid = (function() {
       $("#title").html(movies[genre][year]['name']);
       $("#detail-side .inner").fadeIn("fast");
     });
-  }
-  
-  // center the grid on a particular film
-  function move_to(row, col) {
-    
   }
   
   return {
@@ -193,10 +191,15 @@ var FilmGrid = (function() {
       
       // key bindings for keyboard
       $("body").keydown(function(event) {
-        if(event.keyCode == 37) { move("left"); return true; }
-        if(event.keyCode == 38) { move("up"); return true; }
-        if(event.keyCode == 39) { move("right"); return true; }
-        if(event.keyCode == 40) { move("down"); return true; }
+        if(event.keyCode >= 37 && event.keyCode <= 40) {
+          if(currently_moving) return true;
+          currently_moving = true;
+          if(event.keyCode == 37) move("left");
+          if(event.keyCode == 38) move("up");
+          if(event.keyCode == 39) move("right");
+          if(event.keyCode == 40) move("down");
+          return true;
+        }
         return false;
       });
       
@@ -204,10 +207,10 @@ var FilmGrid = (function() {
       $("#grid-side").swipe({swipe: swipe, allowPageScroll: "none"});
       function swipe(event, direction) {
         // swipes are reversed, just think about it :)
-        if(direction == "left") { move("right"); };
-        if(direction == "right") { move("left"); };
-        if(direction == "up") { move("down"); };
-        if(direction == "down") { move("up"); };
+        if(direction == "left")  move("right");
+        if(direction == "right") move("left");
+        if(direction == "up")    move("down");
+        if(direction == "down")  move("up");
       }
       
     }
