@@ -1,4 +1,20 @@
 
+$(document).ready(function() {
+  
+  FilmGrid.init();
+  FilmGrid.draw_labels();
+  FilmGrid.draw_movies(movies); // movies loaded from movies.js
+  FilmGrid.resize();
+  FilmGrid.bind_keys(); // for keyboard and ipad swipes
+
+  // redraw when window is resized
+  $(window).resize(FilmGrid.resize);
+  
+});
+
+
+
+
 // using the Module Pattern: http://www.yuiblog.com/blog/2007/06/12/module-pattern/
 var FilmGrid = (function() {
 
@@ -92,6 +108,10 @@ var FilmGrid = (function() {
     });
   }
   
+  // center the grid on a particular film
+  function move_to(row, col) {
+    
+  }
   
   return {
 
@@ -138,8 +158,6 @@ var FilmGrid = (function() {
     }, 
     
     resize: function() {
-      console.log("resize");
-
       // XXX these are static, really should go elsewhere
       $("#header").height(header_height);
       $("#grid-mover").width(grid_mover_w).height(grid_mover_h);
@@ -155,8 +173,12 @@ var FilmGrid = (function() {
       $("#grid-side, #detail-side, #shadow-left, \
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
 
-      var t = -1*(grid_mover_h - $("#grid").height())/2.0;  
-      var l = -1*(grid_mover_w - $("#grid").width())/2.0;
+      // var t = -1*(grid_mover_h - $("#grid").height())/2.0;  
+      // var l = -1*(grid_mover_w - $("#grid").width())/2.0;
+      
+      var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y) + sep_y + movie_h/2.0;
+      var l = $("#grid").width()/2.0 -  (middle_x+1)*(movie_w+sep_x) + sep_x + movie_w/2.0;
+      
       $("#grid-mover").css({"top": t+"px" , "left": l+"px"});
       $("#row-labels-mover").css({"top": t+"px"});
       $("#col-labels-mover").css({"left": l+"px"});
@@ -193,17 +215,3 @@ var FilmGrid = (function() {
 
 
 })();
-
-
-$(document).ready(function() {
-  
-  FilmGrid.init();
-  FilmGrid.draw_labels();
-  FilmGrid.draw_movies(movies); // movies loaded from movies.js
-  FilmGrid.resize();
-  FilmGrid.bind_keys(); // for keyboard and ipad swipes
-
-  // redraw when window is resized
-  $(window).resize(FilmGrid.resize);
-  
-});
