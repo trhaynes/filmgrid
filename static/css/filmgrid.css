@@ -1,20 +1,22 @@
 body {
-  font: 13px/15px Helvetica, sans-serif;
+  font: 13px/16px Helvetica, sans-serif;
   color: #333;
   margin: 0; padding: 0;
 }
 
 #header {
-  background-color: #999;
+  background: url("/static/images/bg.png");
+  border-bottom: 1px solid #eee;
 }
 
 p {
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
 }
 
 
 #grid-side {
-  background-color: black;
+  background-color: #111;
+  background: url("/static/images/bg.png");
   position: absolute;
   left: 0;
   bottom: 0;
@@ -144,6 +146,7 @@ p {
 }
 .movie img {
   margin: 0 auto;
+/*  border: 1px solid #777;*/
 }
 .movie.middle {
   margin-left: -30px;
@@ -164,17 +167,70 @@ p {
   bottom: 0;
   width: 249px;
   border-left: 1px solid #555;
-  background-color: black;
+  background-color: #111;
+  background: url("/static/images/bg.png");
   z-index: 200;
+  color: white;
 }
 #detail-side .inner {
-  margin: 10px;
+  margin: 20px;
 }
 #title {
   font-weight: bold;
   color: white;
   font-size: 24px;
   line-height: 26px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px black;
+}
+#title .year {
+  color: #999;
+}
+
+#rating {
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: -.1em;
+}
+#rating .notfilledin {
+  color: #777;
+}
+
+.trailer a {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 4px 7px 3px;
+  background-color: #111;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#333), to(#111));
+  border: 1px solid #ccc;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: -1px -1px black;
+  font-size: 11px;
+  font-weight: bold;
+}
+.trailer .outer {
+  display: inline-block;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+.trailer a:hover {
+  border: 1px solid white;
+}
+.trailer a:active {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#333), to(#111));
+}
+
+.detail-header {
+  font-size: 12px;
+  font-weight: bold;
+  color: #555;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  text-shadow: 1px 1px black;
+}
+.middot {
+  color: #555;
 }
 
 #bigposter {

@@ -55,7 +55,7 @@ var FilmGrid = (function() {
   var grid_mover_w = sep_x*(movies_wide+1) + movie_w*movies_wide; 
   var grid_mover_h = sep_y*(movies_tall+1) + movie_h*movies_tall; 
   
-  var detail_width = 250; // width of detail side
+  var detail_width = 300; // width of detail side
   var header_height = 30; // height of header
   
   var currently_moving = false;
@@ -110,7 +110,7 @@ var FilmGrid = (function() {
     var year = col_labels[middle_x];
     $("#detail-side .inner").fadeOut("fast", function() {
       $("img#bigposter").attr("src", movies[genre][year]['mid']);
-      $("#title").html(movies[genre][year]['name']);
+      // $("#title").html(movies[genre][year]['name']);
       $("#detail-side .inner").fadeIn("fast");
     });
 
@@ -149,7 +149,7 @@ var FilmGrid = (function() {
               } else {
                 $("img#bigposter").attr("src", movies[genre][year]['cover']);
               }
-              $("#title").html(movies[genre][year]['name']);
+              // $("#title").html(movies[genre][year]['name']);
             }
             $("#grid-mover").append($movie);
           }
@@ -164,7 +164,7 @@ var FilmGrid = (function() {
     
     resize: function() {
       // XXX these are static, really should go elsewhere
-      $("#header").height(header_height);
+      $("#header").height(header_height-1);
       $("#grid-mover").width(grid_mover_w).height(grid_mover_h);
 
       $("#grid, #grid-side").width($(document).width()-detail_width);      
