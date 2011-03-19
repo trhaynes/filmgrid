@@ -100,11 +100,11 @@ p {
   font-size: 14px;
   font-weight: bold;
   color: white;
-  background-color: black;
+  background-color: #111;
+  text-shadow: 1px 1px black;
   border: 1px solid #aaa;
   padding: 5px 8px;
   border-radius: 6px;
-  opacity: 0.8;
 }
 .row-label {
   margin-left: 20px;
@@ -142,6 +142,8 @@ p {
 /*  background-image: url("/static/images/the-dilemma-original.jpeg");*/
 /*  overflow: hidden;*/
   text-align: center;
+  background-color: #ccc;
+  border: 1px solid white;
 /*  background-color: transparent;*/
 }
 .movie img {
@@ -157,6 +159,15 @@ p {
   -webkit-box-shadow: 0 0 10px 5px black;
   border: 1px solid white;
 }
+
+.nav-arrow {
+  position: absolute;
+  cursor: pointer;
+/*  background: url("/static/images/nav.png");*/
+  background-color: green;
+  z-index: 200;
+}
+
 
 
 

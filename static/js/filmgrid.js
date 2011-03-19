@@ -58,6 +58,9 @@ var FilmGrid = (function() {
   var detail_width = 300; // width of detail side
   var header_height = 30; // height of header
   
+  var nav_size = 50; // width and height of the mover nav arrows
+  var nav_sep = 10;
+  
   var currently_moving = false;
   
   function draw_row_labels() {
@@ -109,7 +112,7 @@ var FilmGrid = (function() {
     var genre = row_labels[middle_y];
     var year = col_labels[middle_x];
     $("#detail-side .inner").fadeOut("fast", function() {
-      $("img#bigposter").attr("src", movies[genre][year]['mid']);
+      // $("img#bigposter").attr("src", movies[genre][year]['mid']);
       // $("#title").html(movies[genre][year]['name']);
       $("#detail-side .inner").fadeIn("fast");
     });
@@ -140,14 +143,15 @@ var FilmGrid = (function() {
           var year = col_labels[i];
           var genre = row_labels[j];
           if(movies[genre][year]['cover']) {
-            $movie_img = $('<img>').attr("src", movies[genre][year]['cover']);
+            // $movie_img = $('<img>').attr("src", movies[genre][year]['cover']);
+            $movie_img = $('<img>');
             $movie.append($movie_img);
             if(i == middle_x && j == middle_y) {
               $movie.addClass("middle");
               if(movies[genre][year]['mid']) {
-                $("img#bigposter").attr("src", movies[genre][year]['mid']);
+                // $("img#bigposter").attr("src", movies[genre][year]['mid']);
               } else {
-                $("img#bigposter").attr("src", movies[genre][year]['cover']);
+                // $("img#bigposter").attr("src", movies[genre][year]['cover']);
               }
               // $("#title").html(movies[genre][year]['name']);
             }
@@ -160,6 +164,9 @@ var FilmGrid = (function() {
     draw_labels: function() {
       draw_row_labels();
       draw_col_labels();
+      
+      $(".nav-arrow").width(nav_size).height(nav_size);
+                
     }, 
     
     resize: function() {
@@ -178,8 +185,8 @@ var FilmGrid = (function() {
       $("#grid-side, #detail-side, #shadow-left, \
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
       
-      var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y) + sep_y + movie_h/2.0;
-      var l = $("#grid").width()/2.0 -  (middle_x+1)*(movie_w+sep_x) + sep_x + movie_w/2.0;
+      var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y)  + movie_h/2.0;
+      var l = $("#grid").width()/2.0 - (middle_x+1)*(movie_w+sep_x) + movie_w/2.0;
       
       $("#grid-mover").css({"top": t+"px" , "left": l+"px"});
       $("#row-labels-mover").css({"top": t+"px"});
@@ -187,6 +194,29 @@ var FilmGrid = (function() {
       
       $("#row-labels").height($(window).height()-header_height);
       $("#col-labels").width($(document).width()-detail_width);
+      
+      var top_for_leftright = (($("#grid").height()-nav_size)/2.0)+"px";
+      var left_for_topbottom = (($("#grid").width()-nav_size)/2.0)+"px";
+      
+      $("#move-left").css({
+        "left": (($("#grid").width()-middle_w)/2.0-nav_size-nav_sep)+"px", 
+        "top": top_for_leftright
+      });
+
+      $("#move-right").css({
+        "left": (($("#grid").width()+middle_w)/2.0+nav_sep)+"px", 
+        "top":  top_for_leftright
+      });
+      
+      $("#move-up").css({
+        "left": left_for_topbottom, 
+        "top":  (($("#grid").height()-middle_h)/2.0-nav_size-nav_sep)+"px" // XXX why 10??
+      });
+      
+      $("#move-down").css({
+        "left": left_for_topbottom,
+        "top":  (($("#grid").height()+middle_h)/2.0+nav_sep)+"px" // XXX why 10??
+      });
       
     },
     
@@ -205,6 +235,11 @@ var FilmGrid = (function() {
         }
         return false;
       });
+      
+      $("#move-left").live("click",  function() { move("left") });
+      $("#move-right").live("click", function() { move("right") });
+      $("#move-up").live("click",    function() { move("up") });
+      $("#move-down").live("click",  function() { move("down") });
       
       // key bindings for ipad
       $("#grid-side").swipe({swipe: swipe, allowPageScroll: "none"});
