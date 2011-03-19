@@ -58,7 +58,7 @@ var FilmGrid = (function() {
   var detail_width = 300; // width of detail side
   var header_height = 30; // height of header
   
-  var nav_size = 50; // width and height of the mover nav arrows
+  var nav_size = 40; // width and height of the mover nav arrows
   var nav_sep = 10;
   
   var currently_moving = false;
@@ -186,7 +186,7 @@ var FilmGrid = (function() {
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
       
       var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y)  + movie_h/2.0;
-      var l = $("#grid").width()/2.0 - (middle_x+1)*(movie_w+sep_x) + movie_w/2.0;
+      var l = $("#grid").width()/2.0 - (middle_x+1)*(movie_w+sep_x) + movie_w/2.0 -1;
       
       $("#grid-mover").css({"top": t+"px" , "left": l+"px"});
       $("#row-labels-mover").css({"top": t+"px"});

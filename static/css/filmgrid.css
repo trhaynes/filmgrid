@@ -163,11 +163,20 @@ p {
 .nav-arrow {
   position: absolute;
   cursor: pointer;
-/*  background: url("/static/images/nav.png");*/
-  background-color: green;
   z-index: 200;
 }
-
+#move-left {
+  background: url("/static/images/arrow-left.png");
+}
+#move-right {
+  background: url("/static/images/arrow-right.png");
+}
+#move-up {
+  background: url("/static/images/arrow-up.png");
+}
+#move-down {
+  background: url("/static/images/arrow-down.png");
+}
 
 
 
