@@ -112,8 +112,8 @@ var FilmGrid = (function() {
     var genre = row_labels[middle_y];
     var year = col_labels[middle_x];
     $("#detail-side .inner").fadeOut("fast", function() {
-      // $("img#bigposter").attr("src", movies[genre][year]['mid']);
-      // $("#title").html(movies[genre][year]['name']);
+      $("img#bigposter").attr("src", movies[genre][year]['mid']);
+      $("#title").html(movies[genre][year]['name']);
       $("#detail-side .inner").fadeIn("fast");
     });
 
@@ -143,17 +143,17 @@ var FilmGrid = (function() {
           var year = col_labels[i];
           var genre = row_labels[j];
           if(movies[genre][year]['cover']) {
-            // $movie_img = $('<img>').attr("src", movies[genre][year]['cover']);
-            $movie_img = $('<img>');
+            $movie_img = $('<img>').attr("src", movies[genre][year]['cover']);
+            // $movie_img = $('<img>');
             $movie.append($movie_img);
             if(i == middle_x && j == middle_y) {
               $movie.addClass("middle");
               if(movies[genre][year]['mid']) {
-                // $("img#bigposter").attr("src", movies[genre][year]['mid']);
+                $("img#bigposter").attr("src", movies[genre][year]['mid']);
               } else {
-                // $("img#bigposter").attr("src", movies[genre][year]['cover']);
+                $("img#bigposter").attr("src", movies[genre][year]['cover']);
               }
-              // $("#title").html(movies[genre][year]['name']);
+              $("#title").html(movies[genre][year]['name']);
             }
             $("#grid-mover").append($movie);
           }

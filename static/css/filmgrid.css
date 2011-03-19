@@ -139,16 +139,10 @@ p {
 .movie {
   z-index: 1;
   position: absolute;
-/*  background-image: url("/static/images/the-dilemma-original.jpeg");*/
-/*  overflow: hidden;*/
   text-align: center;
-  background-color: #ccc;
-  border: 1px solid white;
-/*  background-color: transparent;*/
 }
 .movie img {
   margin: 0 auto;
-/*  border: 1px solid #777;*/
 }
 .movie.middle {
   margin-left: -30px;
