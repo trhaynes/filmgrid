@@ -10,8 +10,10 @@
 __author__ = "doganaydin"
 __version__ = "0.2"
 
+import tmdb_config
+
 config = {}
-config['apikey'] = "3e7807c4a01f18298f64662b257d7059"
+config['apikey'] = tmdb_config.apikey
 config['urls'] = {}
 config['urls']['movie.search'] = "http://api.themoviedb.org/2.1/Movie.search/en/xml/%(apikey)s/%%s" % (config)
 # http://api.themoviedb.org/2.1/Movie.browse/en-US/xml/APIKEY?order_by=rating&order=desc&genres=18&min_votes=5&page=1&per_page=10

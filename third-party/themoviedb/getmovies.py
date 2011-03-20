@@ -14,11 +14,14 @@ genres['History'] = "36"
 genres['Horror'] = "27"
 genres['Musical'] = "22"
 genres['Science Fiction'] = "878"
+genres['Short'] = "10749"
+genres['Sport'] = "9805"
+genres['Suspense'] = "10748"
 genres['Thriller'] = "53"
 genres['Western'] = "37"
 
 # years = range(1995, 2006)
-years = range(1990, 2011)
+years = range(1987, 2011)
 
 movies_already = set();
 
