@@ -4,11 +4,19 @@ $(document).ready(function() {
   FilmGrid.init();
   FilmGrid.draw_labels();
   FilmGrid.draw_movies(movies); // movies loaded from movies.js
-  FilmGrid.resize();
   FilmGrid.bind_keys(); // for keyboard and ipad swipes
 
   // redraw when window is resized
   $(window).resize(FilmGrid.resize);
+  FilmGrid.resize();
+  setTimeout("$(window).resize()", 200);
+  
+  // var welcome = new Boxy($("#welcome"), {
+  //   title: "Dialog",
+  //   closeable: false,
+  //   title: false,
+  //   modal: true
+  // });
   
 });
 
@@ -37,14 +45,15 @@ var FilmGrid = (function() {
   var move_x = movie_w+sep_x; // amount to move when moving horizontally
   var move_y = movie_h+sep_y; // amount to move when moving vertically
   
-  var start_year = 1990;
+  var start_year = 1991;
   var end_year = 2011;
   
   col_labels = [];
   for(var i=start_year;i<end_year;i++) {
     col_labels.push(String(i));
   }
-  var row_labels = ["History", "Action", "Adventure", "Comedy", "Thriller", "Musical", "Science Fiction"];
+     
+  var row_labels = ["Animation", "Documentary", "Drama", "Fantasy", "Action", "Adventure", "Comedy", "Horror", "Suspense", "Thriller", "Science Fiction", "Musical"];
 
   var movies_tall = row_labels.length;
   var movies_wide = col_labels.length;
@@ -56,9 +65,9 @@ var FilmGrid = (function() {
   var grid_mover_h = sep_y*(movies_tall+1) + movie_h*movies_tall; 
   
   var detail_width = 300; // width of detail side
-  var header_height = 30; // height of header
+  var header_height = 0; // height of header
   
-  var nav_size = 40; // width and height of the mover nav arrows
+  var nav_size = 50; // width and height of the mover nav arrows
   var nav_sep = 10;
   
   var currently_moving = false;
@@ -112,20 +121,48 @@ var FilmGrid = (function() {
     var genre = row_labels[middle_y];
     var year = col_labels[middle_x];
     $("#detail-side .inner").fadeOut("fast", function() {
-      $("img#bigposter").attr("src", movies[genre][year]['mid']);
-      $("#title").html(movies[genre][year]['name']);
-      $("#detail-side .inner").fadeIn("fast");
+      set_details(movies[genre][year], year);
+      if(movies[genre][year]['name']) {
+        $("#detail-side .inner").fadeIn("fast");
+      }
     });
 
+  };
+  
+  function set_details(movie, year) {
     
-
-  }
+    $("#title .name").html(movie['name']);
+    $("#title .year").html(year);
+    $("#info p").html(movie['overview']);
+    if("directors" in movie) {
+      $("#director p").html(movie["directors"].join(" &middot; "));
+    }
+    if("actors" in movie) {
+      $("#actors p").html(movie["actors"].slice(0, 4).join(" &middot; "));
+    }
+    
+    // $("#rating .filledin, #rating .notfilledin").html("");
+    // if("rating" in movie) {
+    //  var rating = parseInt(parseFloat(movie['rating'])/2.0);
+    //  for(var i=0;i<rating;i++) {
+    //    $("#rating .filledin").append("&#9733; ")
+    //  }
+    //  for(var i=rating;i<5;i++) {
+    //    $("#rating .notfilledin").append("&#9733; ")
+    //  }
+    // }
+    
+    
+  };
   
   return {
 
     // public
     
     init: function() {
+      
+      welcome_up = false;
+      
       $("<style type='text/css'> \
         .movie img { max-width: "+movie_w+"px; } \
         .middle { width: "+middle_w+"px !important; height: "+middle_h+"px !important; } \
@@ -142,18 +179,12 @@ var FilmGrid = (function() {
           $movie.css({"width" : movie_w, "height" : movie_h});
           var year = col_labels[i];
           var genre = row_labels[j];
-          if(movies[genre][year]['cover']) {
+          if("cover" in movies[genre][year]) {
             $movie_img = $('<img>').attr("src", movies[genre][year]['cover']);
-            // $movie_img = $('<img>');
             $movie.append($movie_img);
             if(i == middle_x && j == middle_y) {
               $movie.addClass("middle");
-              if(movies[genre][year]['mid']) {
-                $("img#bigposter").attr("src", movies[genre][year]['mid']);
-              } else {
-                $("img#bigposter").attr("src", movies[genre][year]['cover']);
-              }
-              $("#title").html(movies[genre][year]['name']);
+              set_details(movies[genre][year], year);
             }
             $("#grid-mover").append($movie);
           }
@@ -174,14 +205,14 @@ var FilmGrid = (function() {
       $("#header").height(header_height-1);
       $("#grid-mover").width(grid_mover_w).height(grid_mover_h);
 
-      $("#grid, #grid-side").width($(document).width()-detail_width);      
+      $("#grid, #grid-side, #grid-shadow").width($(document).width()-detail_width);      
       $("#detail-side").width(detail_width);
       
-      $("#grid").height($(window).height()-header_height);
-      
+      $("#grid, #grid-shadow").height($(window).height()-header_height);
+
       $("#shadow-left, #shadow-right").height($(window).height()-header_height);
       $("#shadow-top, #shadow-bottom").width($(document).width()-detail_width);
-            
+      
       $("#grid-side, #detail-side, #shadow-left, \
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
       
@@ -210,12 +241,12 @@ var FilmGrid = (function() {
       
       $("#move-up").css({
         "left": left_for_topbottom, 
-        "top":  (($("#grid").height()-middle_h)/2.0-nav_size-nav_sep)+"px" // XXX why 10??
+        "top":  (($("#grid").height()-middle_h)/2.0-nav_size-nav_sep)+"px"
       });
       
       $("#move-down").css({
         "left": left_for_topbottom,
-        "top":  (($("#grid").height()+middle_h)/2.0+nav_sep)+"px" // XXX why 10??
+        "top":  (($("#grid").height()+middle_h)/2.0+nav_sep)+"px"
       });
       
     },
@@ -224,7 +255,8 @@ var FilmGrid = (function() {
       
       // key bindings for keyboard
       $("body").keydown(function(event) {
-        if(event.keyCode >= 37 && event.keyCode <= 40) {
+        if(event.keyCode >= 37 && event.keyCode <= 40 && !welcome_up) {
+          // Boxy.get(welcome).hide();
           if(currently_moving) return true;
           currently_moving = true;
           if(event.keyCode == 37) move("left");

@@ -3692,20 +3692,20 @@ var movies = {
             "votes": "14"
         }, 
         "1995": {
-            // "actors": [
-            //     "Atsuko Tanaka", 
-            //     "Iemasa Kayumi", 
-            //     "K\u00f4ichi Yamadera", 
-            //     "Tamio \u00d4ki"
-            // ], 
-            // "cover": "http://cf1.imgobject.com/posters/050/4c1883297b9aa10d2c000050/kokaku-kidotai-cover.jpg", 
-            // "directors": [
-            //     "Mamoru Oshii"
-            // ], 
-            // "name": "Ghost in the Shell", 
-            // "overview": "In the year 2029, the barriers of our world have been broken down by the net and by cybernetics, but this brings new vulnerability to humans in the form of brain-hacking. When a highly-wanted hacker known as 'The Puppetmaster' begins involving them in politics, Section 9, a group of cybernetically enhanced cops, are called in to investigate and stop the Puppetmaster.", 
-            // "rating": "9.0", 
-            // "votes": "9"
+            "actors": [
+                "Atsuko Tanaka", 
+                "Iemasa Kayumi", 
+                "K\u00f4ichi Yamadera", 
+                "Tamio \u00d4ki"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/050/4c1883297b9aa10d2c000050/kokaku-kidotai-cover.jpg", 
+            "directors": [
+                "Mamoru Oshii"
+            ], 
+            "name": "Ghost in the Shell", 
+            "overview": "In the year 2029, the barriers of our world have been broken down by the net and by cybernetics, but this brings new vulnerability to humans in the form of brain-hacking. When a highly-wanted hacker known as 'The Puppetmaster' begins involving them in politics, Section 9, a group of cybernetically enhanced cops, are called in to investigate and stop the Puppetmaster.", 
+            "rating": "9.0", 
+            "votes": "9"
         }, 
         "1996": {
             "actors": [
@@ -4907,7 +4907,21 @@ var movies = {
             "votes": "33"
         }, 
         "2004": {
-
+            "actors": [
+                "Andre Schneider", 
+                "Barbara Kowa", 
+                "Rainer-Maria Wittenauer", 
+                "Gianni Meurer", 
+                "Martina Schaak"
+            ], 
+            "cover": "", 
+            "directors": [
+                "Ingo J. Biermann"
+            ], 
+            "name": "Deed Poll", 
+            "overview": "No overview found.", 
+            "rating": "8.4", 
+            "votes": "57"
         }, 
         "2005": {
             "actors": [

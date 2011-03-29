@@ -13,6 +13,11 @@ p {
   margin: 0 0 1em 0;
 }
 
+#welcome {
+  width: 500px;
+  height: 300px;
+  display: none;
+}
 
 #grid-side {
   background-color: #111;
@@ -21,6 +26,8 @@ p {
   left: 0;
   bottom: 0;
 }
+
+/* SHADOWS */
 
 #shadow-top, #shadow-bottom {
   position: absolute;
@@ -46,8 +53,8 @@ p {
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
 }
 #shadow-right {
-    right: 250px;
-    background-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
+  right: 250px;
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
 }
 
 
@@ -100,11 +107,12 @@ p {
   font-size: 14px;
   font-weight: bold;
   color: white;
-  background-color: #111;
+  background-color: black;
+  opacity: .9;
   text-shadow: 1px 1px black;
-  border: 1px solid #aaa;
+  border: 1px solid #555;
   padding: 5px 8px;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 .row-label {
   margin-left: 20px;
@@ -125,10 +133,14 @@ p {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
   overflow: hidden;
 }
+
+
+ 
+
+
 
 #grid-mover {
   position: absolute;
@@ -140,6 +152,10 @@ p {
   z-index: 1;
   position: absolute;
   text-align: center;
+/*  cursor: pointer;*/
+}
+.movie:hover {
+/*  border: 1px solid #ccc;*/
 }
 .movie img {
   margin: 0 auto;
