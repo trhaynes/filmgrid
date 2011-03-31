@@ -1,5 +1,5 @@
 body {
-  font: 13px/16px Helvetica, sans-serif;
+  font: 15px/19px Helvetica, sans-serif;
   color: #333;
   margin: 0; padding: 0;
 }
@@ -208,8 +208,8 @@ p {
 #title {
   font-weight: bold;
   color: white;
-  font-size: 24px;
-  line-height: 26px;
+  font-size: 28px;
+  line-height: 30px;
   margin-bottom: 10px;
   text-shadow: 1px 1px 2px black;
 }
@@ -252,7 +252,7 @@ p {
 }
 
 .detail-header {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   color: #555;
   text-transform: uppercase;
@@ -263,9 +263,47 @@ p {
   color: #555;
 }
 
-#bigposter {
-  background-color: #333;
-  margin-bottom: 20px;
-  width: 100%;
-  border: 1px solid white;
+.availability {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #999;
 }
+
+.availability .circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.availability.out .circle {
+  background-color: red;
+/*  box-shadow: 0 0 3px red;*/
+}
+.availability.in .circle {
+  background-color: green;
+/*  box-shadow: 0 0 3px green;*/
+}
+
+.availability .due {
+  color: #333;
+}
+
+.movie .availability {
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  width: 100%;
+  text-align: left;
+  display: none;
+}
+.movie.middle .availability {
+  display: inline-block;
+  left: 18px;
+}
+.movie .availability .circle {
+  box-shadow: 0 0 3px black;
+}
+.movie .availability {
+}
+

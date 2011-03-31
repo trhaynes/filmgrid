@@ -67,8 +67,8 @@ var FilmGrid = (function() {
   var detail_width = 300; // width of detail side
   var header_height = 0; // height of header
   
-  var nav_size = 50; // width and height of the mover nav arrows
-  var nav_sep = 10;
+  var nav_size = 60; // width and height of the mover nav arrows
+  var nav_sep = 0;
   
   var currently_moving = false;
   
@@ -174,7 +174,7 @@ var FilmGrid = (function() {
       
       for(var i=0;i<movies_wide;i++) {
         for(var j=0;j<movies_tall;j++) {
-          var $movie = $('<div class="movie row'+i+'_col'+j+'" ></div>');
+          var $movie = $('<div class="movie row'+i+'_col'+j+'" ><div class="availability out"><span class="circle"></span></div</div>');
           $movie.css({"left" : sep_x + (movie_w+sep_x)*i, "top" : sep_y + (movie_h+sep_y)*j});
           $movie.css({"width" : movie_w, "height" : movie_h});
           var year = col_labels[i];
