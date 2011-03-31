@@ -5,6 +5,7 @@ $(document).ready(function() {
   FilmGrid.draw_labels();
   FilmGrid.draw_movies(movies); // movies loaded from movies.js
   FilmGrid.bind_keys(); // for keyboard and ipad swipes
+  FilmGrid.bind_clicks(); // for clicking on movies
 
   // redraw when window is resized
   $(window).resize(FilmGrid.resize);
@@ -174,7 +175,7 @@ var FilmGrid = (function() {
       
       for(var i=0;i<movies_wide;i++) {
         for(var j=0;j<movies_tall;j++) {
-          var $movie = $('<div class="movie row'+i+'_col'+j+'" ><div class="availability out"><span class="circle"></span></div</div>');
+          var $movie = $('<div class="movie row'+i+'_col'+j+'" row="'+i+'" col="'+j+'" ><div class="availability out"><span class="circle"></span></div</div>');
           $movie.css({"left" : sep_x + (movie_w+sep_x)*i, "top" : sep_y + (movie_h+sep_y)*j});
           $movie.css({"width" : movie_w, "height" : movie_h});
           var year = col_labels[i];
@@ -195,9 +196,7 @@ var FilmGrid = (function() {
     draw_labels: function() {
       draw_row_labels();
       draw_col_labels();
-      
       $(".nav-arrow").width(nav_size).height(nav_size);
-                
     }, 
     
     resize: function() {
@@ -216,8 +215,14 @@ var FilmGrid = (function() {
       $("#grid-side, #detail-side, #shadow-left, \
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
       
+      console.log(middle_y);
+      console.log(middle_x);
+      
       var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y)  + movie_h/2.0;
       var l = $("#grid").width()/2.0 - (middle_x+1)*(movie_w+sep_x) + movie_w/2.0 -1;
+      
+      console.log(t);
+      console.log(l);
       
       $("#grid-mover").css({"top": t+"px" , "left": l+"px"});
       $("#row-labels-mover").css({"top": t+"px"});
@@ -283,9 +288,48 @@ var FilmGrid = (function() {
         if(direction == "down")  move("up");
       }
       
-    }
+    }, 
+    
+      bind_clicks: function() {
+    
+        $(".movie img").live("click", function() {
+          console.log("click on a movie");
+      
+          var row = parseInt($(this).parent(".movie").attr("row"));
+          var col = parseInt($(this).parent(".movie").attr("col"));
+          
+          middle_x = row;
+          middle_y = col;
+          
+          var t = $("#grid").height()/2.0 - (col+1)*(movie_h+sep_y)  + movie_h/2.0;
+          var l = $("#grid").width()/2.0 - (row+1)*(movie_w+sep_x) + movie_w/2.0 - 1;
+
+          
+
+          $(".movie.middle").removeClass("middle");
+          $("#row-labels-mover").animate({"top": t}, move_speed);   
+          $("#col-labels-mover").animate({"left": l}, move_speed);
+          $("#grid-mover").animate({"left": l, "top": t}, move_speed, function() {
+            $(".movie.row"+row+"_col"+col).addClass("middle");
+            currently_moving = false;
+          });
+
+          var genre = row_labels[col];
+          var year = col_labels[row];
+          $("#detail-side .inner").fadeOut("fast", function() {
+            set_details(movies[genre][year], year);
+            if(movies[genre][year]['name']) {
+              $("#detail-side .inner").fadeIn("fast");
+            }
+          });
+          
+        });
+    
+      }
     
   }
+  
+
 
 
 })();

@@ -34,6 +34,7 @@ p {
   left: 0;
   height: 200px;
   z-index: 10;
+  pointer-events: none;
 }
 #shadow-top {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.9)), to(rgba(0,0,0,0.0)));
@@ -47,6 +48,7 @@ p {
   position: absolute;
   width: 200px;
   z-index: 10;
+  pointer-events: none;
 }
 #shadow-left {
   left: 0;
@@ -67,7 +69,7 @@ p {
   z-index: 15;
   bottom: 0;
   background-color: transparent;
-
+  pointer-events: none;
 }
 #row-labels {
   top: 0;
@@ -100,6 +102,7 @@ p {
   position: absolute;
   text-align: center;
   vertical-align: bottom;
+  /*pointer-events: auto;*/
 }
 
 .row-label, .col-label-text {
@@ -116,15 +119,12 @@ p {
 }
 .row-label {
   margin-left: 20px;
+/*  pointer-events: auto;*/
 }
 .col-label-text {
   display: inline-block;
   position: relative;
-/*  -webkit-transform: rotate(-90deg);*/
-/* -moz-transform: rotate(-90deg);*/
-/* writing-mode: tb-rl;*/
   margin: 160px auto;
-  
 }
 
 /* GRID */
@@ -152,10 +152,10 @@ p {
   z-index: 1;
   position: absolute;
   text-align: center;
-/*  cursor: pointer;*/
+  cursor: pointer;
 }
-.movie:hover {
-/*  border: 1px solid #ccc;*/
+.movie img:hover {
+  box-shadow: 0 0 0 2px white;
 }
 .movie img {
   margin: 0 auto;
@@ -166,11 +166,13 @@ p {
   z-index: 2;
 }
 .movie.middle img {
+  box-shadow: 0 0 10px 5px black;
   -webkit-box-shadow: 0 0 10px 5px black;
   border: 1px solid white;
 }
 
 .nav-arrow {
+  display: none;
   position: absolute;
   cursor: pointer;
   z-index: 200;
