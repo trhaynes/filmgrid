@@ -215,14 +215,8 @@ var FilmGrid = (function() {
       $("#grid-side, #detail-side, #shadow-left, \
          #shadow-right, #shadow-top").css({"top": header_height+"px"});
       
-      console.log(middle_y);
-      console.log(middle_x);
-      
       var t = $("#grid").height()/2.0 - (middle_y+1)*(movie_h+sep_y)  + movie_h/2.0;
       var l = $("#grid").width()/2.0 - (middle_x+1)*(movie_w+sep_x) + movie_w/2.0 -1;
-      
-      console.log(t);
-      console.log(l);
       
       $("#grid-mover").css({"top": t+"px" , "left": l+"px"});
       $("#row-labels-mover").css({"top": t+"px"});
@@ -293,7 +287,6 @@ var FilmGrid = (function() {
       bind_clicks: function() {
     
         $(".movie img").live("click", function() {
-          console.log("click on a movie");
       
           var row = parseInt($(this).parent(".movie").attr("row"));
           var col = parseInt($(this).parent(".movie").attr("col"));
@@ -303,8 +296,6 @@ var FilmGrid = (function() {
           
           var t = $("#grid").height()/2.0 - (col+1)*(movie_h+sep_y)  + movie_h/2.0;
           var l = $("#grid").width()/2.0 - (row+1)*(movie_w+sep_x) + movie_w/2.0 - 1;
-
-          
 
           $(".movie.middle").removeClass("middle");
           $("#row-labels-mover").animate({"top": t}, move_speed);   
