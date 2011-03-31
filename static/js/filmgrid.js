@@ -12,6 +12,10 @@ $(document).ready(function() {
   FilmGrid.resize();
   setTimeout("$(window).resize()", 200);
   
+  $(window).load(function() {
+    // XXX hide loading screen here
+  })
+  
   // var welcome = new Boxy($("#welcome"), {
   //   title: "Dialog",
   //   closeable: false,
@@ -32,11 +36,11 @@ var FilmGrid = (function() {
   var move_speed = 200;
   
   // width of thumbnails
-  var movie_w = 148;
+  var movie_w = 128;
   var movie_h = movie_w*1.5027;
   
   // the middle film thumbnail is larger
-  var middle_bigger_by = 60;
+  var middle_bigger_by = 80;
   var middle_w = movie_w + middle_bigger_by;
   var middle_h = movie_h + middle_bigger_by;
 
@@ -136,10 +140,10 @@ var FilmGrid = (function() {
     $("#title .year").html(year);
     $("#info p").html(movie['overview']);
     if("directors" in movie) {
-      $("#director p").html(movie["directors"].join(" &middot; "));
+      $("#director p").html(movie["directors"].join(' <span class="middot">&middot;</span> '));
     }
     if("actors" in movie) {
-      $("#actors p").html(movie["actors"].slice(0, 4).join(" &middot; "));
+      $("#actors p").html(movie["actors"].slice(0, 4).join(' <span class="middot">&middot;</span> '));
     }
     
     // $("#rating .filledin, #rating .notfilledin").html("");
@@ -154,6 +158,31 @@ var FilmGrid = (function() {
     // }
     
     
+  };
+  
+  function handle_click(row, col) {  
+    middle_x = row;
+    middle_y = col;
+  
+    var t = $("#grid").height()/2.0 - (col+1)*(movie_h+sep_y)  + movie_h/2.0;
+    var l = $("#grid").width()/2.0 - (row+1)*(movie_w+sep_x) + movie_w/2.0 - 1;
+
+    $(".movie.middle").removeClass("middle");
+    $("#row-labels-mover").animate({"top": t}, move_speed);   
+    $("#col-labels-mover").animate({"left": l}, move_speed);
+    $("#grid-mover").animate({"left": l, "top": t}, move_speed, function() {
+      $(".movie.row"+row+"_col"+col).addClass("middle");
+      currently_moving = false;
+    });
+
+    var genre = row_labels[col];
+    var year = col_labels[row];
+    $("#detail-side .inner").fadeOut("fast", function() {
+      set_details(movies[genre][year], year);
+      if(movies[genre][year]['name']) {
+        $("#detail-side .inner").fadeIn("fast");
+      }
+    });
   };
   
   return {
@@ -284,39 +313,15 @@ var FilmGrid = (function() {
       
     }, 
     
-      bind_clicks: function() {
-    
-        $(".movie img").live("click", function() {
+    bind_clicks: function() {
       
-          var row = parseInt($(this).parent(".movie").attr("row"));
-          var col = parseInt($(this).parent(".movie").attr("col"));
-          
-          middle_x = row;
-          middle_y = col;
-          
-          var t = $("#grid").height()/2.0 - (col+1)*(movie_h+sep_y)  + movie_h/2.0;
-          var l = $("#grid").width()/2.0 - (row+1)*(movie_w+sep_x) + movie_w/2.0 - 1;
-
-          $(".movie.middle").removeClass("middle");
-          $("#row-labels-mover").animate({"top": t}, move_speed);   
-          $("#col-labels-mover").animate({"left": l}, move_speed);
-          $("#grid-mover").animate({"left": l, "top": t}, move_speed, function() {
-            $(".movie.row"+row+"_col"+col).addClass("middle");
-            currently_moving = false;
-          });
-
-          var genre = row_labels[col];
-          var year = col_labels[row];
-          $("#detail-side .inner").fadeOut("fast", function() {
-            set_details(movies[genre][year], year);
-            if(movies[genre][year]['name']) {
-              $("#detail-side .inner").fadeIn("fast");
-            }
-          });
-          
-        });
-    
-      }
+      $(".movie img").live("click", function() {
+        var row = parseInt($(this).parent(".movie").attr("row"));
+        var col = parseInt($(this).parent(".movie").attr("col"));
+        handle_click(row, col);
+      });
+  
+    }
     
   }
   
