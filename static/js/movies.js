@@ -2410,20 +2410,17 @@ var movies = {
     "Fantasy": {
         "1991": {
             "actors": [
-                "Paige O'Hara", 
-                "Robby Benson", 
-                "Richard White", 
-                "Jerry Orbach", 
-                "David Ogden Stiers", 
-                "Angela Lansbury"
+                "Dominique Pinon", 
+                "Marie-Laure Dougnac", 
+                "Jean-Claude Dreyfus", 
+                "Karin Viard"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/00a/4cacb4d37b9aa1193200000a/beauty-and-the-beast-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/14a/4d7e53b75e73d6282800314a/delicatessen-cover.jpg", 
             "directors": [
-                "Gary Trousdale", 
-                "Kirk Wise"
+                "Jean-Pierre Jeunet"
             ], 
-            "name": "Beauty and the Beast", 
-            "overview": "Follow the adventures of Belle, a bright young woman who finds herself in the castle of a prince who's been turned into a mysterious beast. With the help of the castle's enchanted staff, Belle soon learns the most important lesson of all -- that true beauty comes from within.", 
+            "name": "Delicatessen", 
+            "overview": "This bizarre surrealistic black comedy takes place in a small fictitious post-apocalyptic town where food is scares and butcher Louison has the macabre business of using human flesh to feed his costumers. Yet when his daughter falls in love with his next slaughter victim things turn into chaos.", 
             "rating": "9.0", 
             "votes": "8"
         }, 
