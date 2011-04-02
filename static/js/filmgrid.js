@@ -13,7 +13,7 @@ $(document).ready(function() {
   setTimeout("$(window).resize()", 200);
   
   $(window).load(function() {
-    // XXX hide loading screen here
+    $(".movie, .row-label, .col-label, #detail-side .inner").fadeIn("slow");
   })
   
   // var welcome = new Boxy($("#welcome"), {
@@ -58,7 +58,7 @@ var FilmGrid = (function() {
     col_labels.push(String(i));
   }
      
-  var row_labels = ["Animation", "Documentary", "Drama", "Fantasy", "Action", "Adventure", "Comedy", "Horror", "Suspense", "Thriller", "Science Fiction", "Musical"];
+  var row_labels = ["Animation", "Drama", "Fantasy", "Action", "Adventure", "Comedy", "Horror", "Suspense", "Thriller", "Science Fiction"];
 
   var movies_tall = row_labels.length;
   var movies_wide = col_labels.length;
@@ -197,6 +197,7 @@ var FilmGrid = (function() {
         .movie img { max-width: "+movie_w+"px; } \
         .middle { width: "+middle_w+"px !important; height: "+middle_h+"px !important; } \
         .middle img { max-height: "+middle_h+"px !important; max-width: "+middle_w+" !important; } \
+        .movie, .row-label, .col-label, #detail-side .inner { display: none; } \
       </style>").appendTo("head");
     },
     
@@ -204,7 +205,7 @@ var FilmGrid = (function() {
       
       for(var i=0;i<movies_wide;i++) {
         for(var j=0;j<movies_tall;j++) {
-          var $movie = $('<div class="movie row'+i+'_col'+j+'" row="'+i+'" col="'+j+'" ><div class="availability out"><span class="circle"></span></div</div>');
+          var $movie = $('<div class="movie row'+i+'_col'+j+'" row="'+i+'" col="'+j+'" ><div class="availability in"><span class="circle"></span></div</div>');
           $movie.css({"left" : sep_x + (movie_w+sep_x)*i, "top" : sep_y + (movie_h+sep_y)*j});
           $movie.css({"width" : movie_w, "height" : movie_h});
           var year = col_labels[i];

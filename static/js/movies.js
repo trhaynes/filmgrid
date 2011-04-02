@@ -970,25 +970,17 @@ var movies = {
     "Animation": {
         "1991": {
             "actors": [
-                "Mitsuo Iwata", 
-                "Nozomu Sasaki", 
-                "Mami Koyama", 
-                "Tessh\u00f4 Genda", 
-                "Hiroshi \u00d4take", 
-                "K\u00f4ichi Kitamura", 
-                "Yuriko Fuchizaki", 
-                "Masaaki \u00d4kura", 
-                "Takeshi Kusao", 
-                "Kazuhiro Kamifuji", 
-                "Tatsuhiko Nakamura", 
-                "Fukue It\u00f4"
+                "Paige O'Hara", 
+                "Robby Benson", 
+                "Richard White", 
+                "Jerry Orbach" 
             ], 
-            "cover": "http://cf1.imgobject.com/posters/230/4bd1efa6017a3c63ea000230/akira-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/00a/4cacb4d37b9aa1193200000a/beauty-and-the-beast-cover.jpg", 
             "directors": [
-                "Katsuhiro \u00d4tomo"
+                "Gary Trousdale"
             ], 
-            "name": "Akira", 
-            "overview": "Childhood friends Tetsuo and Kaneda are pulled into the post-apocalyptic underworld of Neo-Tokyo and forced to fight for their very survival. Kaneda is a bike gang leader, and Tetsuo is a member of a tough motorcycle crew who becomes involved in a covert government project called Akira. But a bloody battle ensues when Kaneda sets out to save his friend.", 
+            "name": "Beauty and the Beast", 
+            "overview": "Follow the adventures of Belle, a bright young woman who finds herself in the castle of a prince who's been turned into a mysterious beast. With the help of the castle's enchanted staff, Belle soon learns the most important lesson of all -- that true beauty comes from within.", 
             "rating": "8.2", 
             "votes": "24"
         }, 
@@ -1054,7 +1046,30 @@ var movies = {
             "rating": "9.6", 
             "votes": "11"
         }, 
-        "1995": {}, 
+        "1995": {
+            "actors": [
+                "Tom Hanks", 
+                "Tim Allen", 
+                "John Morris", 
+                "Don Rickles", 
+                "Jim Varney", 
+                "Wallace Shawn", 
+                "John Ratzenberger", 
+                "Annie Potts", 
+                "Erik von Detten", 
+                "Laurie Metcalf", 
+                "R. Lee Ermey", 
+                "Sarah Freeman"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/d90/4bc90db3017a3c57fe004d90/toy-story-cover.jpg", 
+            "directors": [
+                "John Lasseter"
+            ], 
+            "name": "Toy Story", 
+            "overview": "Woody the cowboy is young Andy\u2019s favorite toy. Yet this changes when Andy get the new super toy Buzz Lightyear for his birthday. Now that Woody is no longer number one he plans his revenge on Buzz. Toy Story is a milestone in film history for being the first feature film to use entirely computer animation.", 
+            "rating": "9.0", 
+            "votes": "16"
+        }, 
         "1996": {
             "actors": [
                 "Mike Judge", 
@@ -1137,17 +1152,27 @@ var movies = {
             "votes": "7"
         }, 
         "2000": {
-            "actors": [
-                "Ralph Eggleston"
+              "actors": [
+                "Tom Hanks", 
+                "Tim Allen", 
+                "Kelsey Grammer", 
+                "Joan Cusack", 
+                "Don Rickles", 
+                "Jim Varney", 
+                "Wallace Shawn", 
+                "John Ratzenberger", 
+                "Annie Potts", 
+                "Wayne Knight", 
+                "John Morris"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/2a9/4bc94030017a3c57fe01b2a9/for-the-birds-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/cc4/4cbbc7a35e73d67786000cc4/toy-story-2-cover.jpg", 
             "directors": [
-                "Ralph Eggleston"
+                "John Lasseter"
             ], 
-            "name": "For The Birds", 
-            "overview": "One by one, a flock of small birds perches on a telephone wire.  Sitting close together has problems enough, and then comes along a large dopey bird that tries to join them.  The birds of a feather can't help but make fun of him - and their clique mentality proves embarrassing in the end.", 
-            "rating": "9.2", 
-            "votes": "5"
+            "name": "Toy Story 2", 
+            "overview": "During a garage sale Andy\u2019s mother sells some of Andy\u2019s old things including his favorite toy Woody to a collector. Buzz Lightyear and the other toys begin a reckless mission to save their friend. The sequel to the revolutionary computer animated feature film Toy Story.", 
+            "rating": "8.2", 
+            "votes": "16"
         }, 
         "2001": {
             "actors": [
@@ -1172,15 +1197,31 @@ var movies = {
             "votes": "27"
         }, 
         "2002": {
-            "actors": [], 
-            "cover": "http://cf1.imgobject.com/posters/fe9/4bc9738e017a3c57fe034fe9/information-violence-cover.jpg", 
-            "directors": [
-                "Tino Schwanemann"
+            "actors": [
+                "John Goodman", 
+                "Billy Crystal", 
+                "Mary Gibbs", 
+                "Steve Buscemi", 
+                "James Coburn", 
+                "Jennifer Tilly", 
+                "Bob Peterson", 
+                "John Ratzenberger", 
+                "Frank Oz", 
+                "Steve Susskind", 
+                "Bonnie Hunt", 
+                "Jeff Pidgeon", 
+                "Samuel Lord Black"
             ], 
-            "name": "Information Violence", 
-            "overview": "No overview found.", 
-            "rating": "8.4", 
-            "votes": "9"
+            "cover": "http://cf1.imgobject.com/posters/3f5/4bc90967017a3c57fe0033f5/monsters-inc-cover.jpg", 
+            "directors": [
+                "Lee Unkrich", 
+                "David Silverman", 
+                "Pete Docter"
+            ], 
+            "name": "Monsters, Inc.", 
+            "overview": "James Sullivan and Mike Wazowski are monsters, they earn their living scaring children and are the best in the business... even though they're more afraid of the children than they are of them. When a child accidentally enters their world, James and Mike suddenly find that kids are not to be afraid of and they uncover a conspiracy that could threaten all children across the world.", 
+            "rating": "8.6", 
+            "votes": "22"
         }, 
         "2003": {
             "actors": [
@@ -1198,31 +1239,25 @@ var movies = {
         }, 
         "2004": {
             "actors": [
-                "Tom Hanks", 
-                "Michael Jeter", 
-                "Eddie Deezen", 
-                "Chris Coppola", 
-                "Michael Jeter", 
-                "Tom Hanks", 
-                "Tom Hanks", 
-                "Tom Hanks", 
-                "Tom Hanks", 
-                "Tom Hanks", 
-                "Nona Gaye", 
-                "Peter Scolari", 
-                "Charles Fleischer", 
-                "Steven Tyler", 
-                "Leslie Zemeckis", 
-                "Julene Renee"
+                "Craig T. Nelson", 
+                "Holly Hunter", 
+                "Samuel L. Jackson", 
+                "Jason Lee", 
+                "Dominique Louis", 
+                "Teddy Newton", 
+                "Eli Fucile", 
+                "Maeve Andrews", 
+                "Spencer Fox", 
+                "Sarah Vowell"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/eab/4d6039ac5e73d63105000eab/the-polar-express-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/6d2/4d3ec06e5e73d622d80046d2/the-incredibles-cover.jpg", 
             "directors": [
-                "Robert Zemeckis"
+                "Brad Bird"
             ], 
-            "name": "The Polar Express", 
-            "overview": "This is the story of a young hero boy on Christmas Eve who boards on a powerful magical train that's headed to the North Pole and Santa Claus's home. What unfolds is an an adventure which follows a doubting boy, who takes an extraordinary train ride to the North Pole; during this ride, he embarks on a journey of self-discovery which shows him that the wonder of life never fades for those who believe.", 
-            "rating": "8.2", 
-            "votes": "6"
+            "name": "The Incredibles", 
+            "overview": "Bob Parr has given up his superhero days to log in time as an insurance adjuster and raise his three children with his formerly heroic wife in suburbia. But when he receives a mysterious assignment, it's time to get back into costume.", 
+            "rating": "9.2", 
+            "votes": "13"
         }, 
         "2005": {
             "actors": [
@@ -1340,22 +1375,26 @@ var movies = {
         }, 
         "2010": {
             "actors": [
-                "Adam Carolla", 
-                "Abbey McBride", 
-                "Jess Harnell", 
-                "Jack Plotnick", 
-                "Tara Strong", 
-                "Cree Summer", 
-                "James Arnold Taylor"
+                "Tom Hanks", 
+                "Tim Allen", 
+                "Joan Cusack", 
+                "Ned Beatty", 
+                "Michael Keaton", 
+                "Whoopi Goldberg", 
+                "Bonnie Hunt", 
+                "Wallace Shawn", 
+                "John Ratzenberger", 
+                "Don Rickles", 
+                "Estelle Harris"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/253/4bd11943017a3c63f5000253/the-drawn-together-movie-the-movie-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/011/4cdb8b335e73d605e6000011/toy-story-3-cover.jpg", 
             "directors": [
-                "Greg Franklin"
+                "Lee Unkrich"
             ], 
-            "name": "The Drawn Together Movie: The Movie!", 
-            "overview": "Eight housemates on a fake animated reality TV show realize they've been canceled and set off on a journey to get back on the air.", 
+            "name": "Toy Story 3", 
+            "overview": "Woody, Buzz, and the rest of Andy's toys haven't been played with in years. With Andy about to go to college, the gang find themselves accidentally left at a nefarious day care center. The toys must band together to escape and return home to Andy.", 
             "rating": "9.2", 
-            "votes": "5"
+            "votes": "49"
         }, 
         "2011": {
             "actors": [
@@ -1647,17 +1686,17 @@ var movies = {
         }, 
         "2003": {
             "actors": [
-                "James Spader", 
-                "Maggie Gyllenhaal", 
-                "Jeremy Davies", 
-                "Lesley Ann Warren"
+                "Bill Nighy", 
+                "Gregor Fisher", 
+                "Rory MacGregor", 
+                "Colin Firth"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/73c/4bc931e9017a3c57fe01473c/secretary-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/4ff/4d6b655a7b9aa136290034ff/love-actually-cover.jpg", 
             "directors": [
-                "Steven Shainberg"
+                "Richard Curtis"
             ], 
-            "name": "Secretary", 
-            "overview": "A young woman, recently released from a mental hospital, gets a job as a secretary to a demanding lawyer, where their employer-employee relationship turns into a sexual, sadomasochistic one.", 
+            "name": "Love Actually", 
+            "overview": "A British romantic comedy which follows seemingly unrelated people as their lives begin to intertwine while they fall in -- and out -- of love. Affections grow and develop as Christmas draws near.", 
             "rating": "9.0", 
             "votes": "6"
         }, 
@@ -2018,27 +2057,110 @@ var movies = {
         "2011": {}
     }, 
     "Drama": {
-        "1991": {}, 
-        "1992": {}, 
-        "1993": {}, 
-        "1994": {}, 
-        "1995": {}, 
-        "1996": {}, 
-        "1997": {}, 
+        "1991": {
+            "actors": [
+              "Robin Williams", "Dustin Hoffman", "Julia Roberts"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/014/4cec6b857b9aa12f68000014/hook-cover.jpg", 
+            "directors": [
+                "Steven Spielberg"
+            ], 
+            "name": "Hook", 
+            "overview": "The boy who wasn't supposed to grow up -- Peter Pan -- did just that, becoming a soulless corporate lawyer whose workaholism could cost him his wife and kids, in this family-oriented fantasy from director Steven Spielberg. But a trip to see Granny Wendy in London, where the vengeful Capt. Hook kidnaps Peter's kids and forces Peter to return to Neverland, could lead to a chance at redemption.", 
+            "rating": "8.1", 
+            "votes": "7"  
+        }, 
+        "1992": {
+            "actors": [
+              "Tim Roth", "Michael Madsen", "Chris Penn", "Steve Buscemi"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/229/4d1bba265e73d6084200c229/reservoir-dogs-cover.jpg", 
+            "directors": [
+                "Quentin Tarantino"
+            ], 
+            "name": "Reservoir Dogs", 
+            "overview": "A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.", 
+            "rating": "8.1", 
+            "votes": "7"            
+        }, 
+        "1993": {
+            "actors": [
+              "Liam Neeson", "Ben Kingsley", "Ralph Fiennes"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/84b/4bc907a0017a3c57fe00284b/schindler-s-list-cover.jpg", 
+            "directors": [
+                "Steven Spielberg"
+            ], 
+            "name": "Schindler's List", 
+            "overview": "Told from the perspective of businessman Oskar Schindler who saved over a thousand Jewish lives from the Nazis while they worked as slaves in his armor factory. Schindler’s list is bases on a true story and is illustrated in black and white and filmed on many original locations which brought much discussions and controversy.", 
+            "rating": "8.1", 
+            "votes": "7"           
+        }, 
+        "1994": {
+            "actors": [
+              "John Travolta", "Samuel L. Jackson", "Uma Thurman", "Bruce Willis"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/37a/4d5a1c8e5e73d65e9500037a/pulp-fiction-cover.jpg", 
+            "directors": [
+                "Quentin Tarantino"
+            ], 
+            "name": "Pulp Fiction", 
+            "overview": "Pulp Fiction is a cult film by Director Quentin Tarantino with three interwoven plots with lots of violence, absurdity, and great music. The film is Tarantino’s most famous and the film that cemented his name and style in Hollywood.", 
+            "rating": "8.1", 
+            "votes": "7"           
+        }, 
+        "1995": {
+            "actors": [
+              "Mel Gibson", "Catherine McCormack", "Sophie Marceau", "Patrick McGoohan"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/1b2/4d598e2c5e73d65ac00001b2/braveheart-cover.jpg", 
+            "directors": [
+                "Mel Gibson"
+            ], 
+            "name": "Braveheart", 
+            "overview": "Enraged at the slaughter of Murron -- his new bride and childhood love -- legendary Scottish warrior William Wallace slays a platoon of the local English lord's soldiers. This leads the village to revolt and, eventually, the entire country to rise up against English rule.", 
+            "rating": "8.1", 
+            "votes": "7"   
+        }, 
+        "1996": {
+            "actors": [
+              "Will Smith", "Bill Pullman", "Jeff Goldblum", "Mary McDonnell"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/4c1/4cd778925e73d676d30004c1/independence-day-cover.jpg", 
+            "directors": [
+                "Roland Emmerich"
+            ], 
+            "name": "Independence Day", 
+            "overview": "On July 2, a giant alien mothership enters orbit around Earth and deploys several dozen saucer-shaped \"destroyer\" spacecraft that quickly lay waste to major cities around the planet. On July 3, the United States conducts a coordinated counterattack that fails. On July 4 the a plan is devised to gain access to the interior of the alien mothership in space in order to plant a nuclear missile.", 
+            "rating": "8.1", 
+            "votes": "7"           
+        }, 
+        "1997": {
+            "actors": [
+              "Robin Williams", "Matt Damon", "Ben Affleck"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/ba6/4bc9081a017a3c57fe002ba6/good-will-hunting-cover.jpg", 
+            "directors": [
+                "Gus Van Sant"
+            ], 
+            "name": "Good Will Hunting", 
+            "overview": "Gus van Sant’s film tells the story of a mathematically gifted young man, named Will Hunting, who’s on the search for his identity while ruthlessly eluding his fellow friends. His first introspective look at himself is achieved after meeting with the therapist Sean Maguire.", 
+            "rating": "8.1", 
+            "votes": "7"          
+        }, 
         "1998": {
             "actors": [
-                "Zin\u00e9dine Zidane", 
-                "Didier Deschamps", 
-                "David Tr\u00e9z\u00e9guet", 
-                "Lilian Thuram", 
-                "Aim\u00e9 Jacquet"
+                "Edward Norton", 
+                "Edward Furlong", 
+                "Beverly D'Angelo", 
+                "Avery Brooks"
             ], 
-            "cover": "", 
+            "cover": "http://cf1.imgobject.com/posters/d8a/4be70fce017a3c35bd000d8a/american-history-x-cover.jpg", 
             "directors": [
-                "St\u00e9phane Meunier"
+                "Tony Kaye"
             ], 
-            "name": "Les yeux dans les bleus", 
-            "overview": "No overview found.", 
+            "name": "American History X", 
+            "overview": "With its explicit depiction of violence, American History X is a controversial drama about a convicted Neo-Nazi and his struggle with his friends, family, and with the identity he has created for himself. The film touches on nationalism and racism in the US.", 
             "rating": "7.6", 
             "votes": "7"
         }, 
@@ -2069,7 +2191,19 @@ var movies = {
             "rating": "8.2", 
             "votes": "9"
         }, 
-        "2000": {}, 
+        "2000": {
+            "actors": [
+                "Russell Crowe", 
+                "Joaquin Phoenix", 
+                "Connie Nielsen"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/91a/4c705afd5e73d65f7c00091a/gladiator-cover.jpg", 
+            "directors": ["Ridley Scott"], 
+            "name": "Gladiator", 
+            "overview": "When a Roman general is betrayed and his family murdered by a corrupt prince, he comes to Rome as a gladiator to seek revenge. ", 
+            "rating": "8.4", 
+            "votes": "5"          
+        }, 
         "2001": {
             "actors": [
                 "Keanu Reeves", 
@@ -2223,15 +2357,17 @@ var movies = {
         }, 
         "2008": {
             "actors": [
-                "Lou Dobbs", 
-                "Michael Badnarik"
+                "Christian Bale", 
+                "Heath Ledger",
+                "Morgan Freeman",
+                "Eric Roberts"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/45b/4bc96716017a3c57fe02f45b/the-decline-and-fall-of-america-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/1e3/4bc90422017a3c57fe0011e3/the-dark-knight-cover.jpg", 
             "directors": [
-                "B.A. Brooks"
+                "Christopher Nolan"
             ], 
-            "name": "The Decline And Fall Of America", 
-            "overview": "A shocking 2 hour full length movie from B.A. Brooks that will change the way you look at our leadership within America's government and military today.", 
+            "name": "The Dark Knight", 
+            "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.", 
             "rating": "9.6", 
             "votes": "140"
         }, 
@@ -2259,13 +2395,13 @@ var movies = {
             "votes": "5"
         }, 
         "2010": {
-            "actors": [], 
-            "cover": "http://cf1.imgobject.com/posters/944/4bc972c7017a3c57fe034944/africa-light-gray-zone-cover.jpg", 
+            "actors": ["Natalie Portman", "Mila Kunis", "Winona Ryder", "Vincent Cassel"], 
+            "cover": "http://cf1.imgobject.com/posters/009/4cfea7655e73d6299c005009/black-swan-cover.jpg", 
             "directors": [
-                "Tino Schwanemann"
+                "Darren Aronofsky"
             ], 
-            "name": "Africa Light / Gray Zone", 
-            "overview": "\"Africa Light\" - as white local citizens call Namibia. The name suggests romance, the beauty of nature and promises a life without any problems in a country where the difference between rich and poor could hardly be greater. Namibia does not give that impression of it. If you look at its surface it seems like Africa in its most innocent and civilized form. It is a country that is so inviting to dream by its spectacular landscape, stunning scenery and fascinating wildlife. It has a very strong tourism structure and the government gets a lot of money with its magical attraction. But despite its grandiose splendor it is an endless gray zone as well. It oscillates between tradition and modernity, between the cattle in the country and the slums in the city. It shuttles from colonial times, land property reform to minimum wage for everyone. It fluctuates between socialism and cold calculated market economy.", 
+            "name": "Black Swan", 
+            "overview": "Nina is a ballerina in a New York City ballet company whose life, like all those in her profession, is completely consumed with dance. She lives with her obsessive former ballerina mother Erica who exerts a suffocating control over her. When artistic director Thomas Leroy decides to replace prima ballerina Beth MacIntyre for the opening production of their new season, Swan Lake, Nina is his first choice. But Nina has competition: a new dancer, Lily, who impresses Leroy as well. Swan Lake requires a dancer who can play both the White Swan with innocence and grace, and the Black Swan, who represents guile and sensuality. Nina fits the White Swan role perfectly but Lily is the personification of the Black Swan. As the two young dancers expand their rivalry into a twisted friendship, Nina begins to get more in touch with her dark side - a recklessness that threatens to destroy her.", 
             "rating": "9.4", 
             "votes": "27"
         }, 
@@ -2366,27 +2502,18 @@ var movies = {
         }, 
         "1995": {
             "actors": [
-                "Tom Hanks", 
-                "Tim Allen", 
-                "John Morris", 
-                "Don Rickles", 
-                "Jim Varney", 
-                "Wallace Shawn", 
-                "John Ratzenberger", 
-                "Annie Potts", 
-                "Erik von Detten", 
-                "Laurie Metcalf", 
-                "R. Lee Ermey", 
-                "Sarah Freeman"
+                "Robin Williams", 
+                "Kirsten Dunst", 
+                "Jonathan Hyde"
             ], 
-            "cover": "http://cf1.imgobject.com/posters/d90/4bc90db3017a3c57fe004d90/toy-story-cover.jpg", 
+            "cover": "http://cf1.imgobject.com/posters/01b/4c1b868d7b9aa117b200001b/jumanji-cover.jpg", 
             "directors": [
-                "John Lasseter"
+                "Joe Johnston"
             ], 
-            "name": "Toy Story", 
-            "overview": "Woody the cowboy is young Andy\u2019s favorite toy. Yet this changes when Andy get the new super toy Buzz Lightyear for his birthday. Now that Woody is no longer number one he plans his revenge on Buzz. Toy Story is a milestone in film history for being the first feature film to use entirely computer animation.", 
-            "rating": "9.0", 
-            "votes": "16"
+            "name": "Jumanji", 
+            "overview": "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.", 
+            "rating": "7.6", 
+            "votes": "6"
         }, 
         "1996": {
             "actors": [
@@ -2494,27 +2621,7 @@ var movies = {
             "votes": "29"
         }, 
         "2000": {
-            "actors": [
-                "Tom Hanks", 
-                "Tim Allen", 
-                "Kelsey Grammer", 
-                "Joan Cusack", 
-                "Don Rickles", 
-                "Jim Varney", 
-                "Wallace Shawn", 
-                "John Ratzenberger", 
-                "Annie Potts", 
-                "Wayne Knight", 
-                "John Morris"
-            ], 
-            "cover": "http://cf1.imgobject.com/posters/cc4/4cbbc7a35e73d67786000cc4/toy-story-2-cover.jpg", 
-            "directors": [
-                "John Lasseter"
-            ], 
-            "name": "Toy Story 2", 
-            "overview": "During a garage sale Andy\u2019s mother sells some of Andy\u2019s old things including his favorite toy Woody to a collector. Buzz Lightyear and the other toys begin a reckless mission to save their friend. The sequel to the revolutionary computer animated feature film Toy Story.", 
-            "rating": "8.2", 
-            "votes": "16"
+
         }, 
         "2001": {
             "actors": [
@@ -2537,31 +2644,7 @@ var movies = {
             "votes": "21"
         }, 
         "2002": {
-            "actors": [
-                "John Goodman", 
-                "Billy Crystal", 
-                "Mary Gibbs", 
-                "Steve Buscemi", 
-                "James Coburn", 
-                "Jennifer Tilly", 
-                "Bob Peterson", 
-                "John Ratzenberger", 
-                "Frank Oz", 
-                "Steve Susskind", 
-                "Bonnie Hunt", 
-                "Jeff Pidgeon", 
-                "Samuel Lord Black"
-            ], 
-            "cover": "http://cf1.imgobject.com/posters/3f5/4bc90967017a3c57fe0033f5/monsters-inc-cover.jpg", 
-            "directors": [
-                "Lee Unkrich", 
-                "David Silverman", 
-                "Pete Docter"
-            ], 
-            "name": "Monsters, Inc.", 
-            "overview": "James Sullivan and Mike Wazowski are monsters, they earn their living scaring children and are the best in the business... even though they're more afraid of the children than they are of them. When a child accidentally enters their world, James and Mike suddenly find that kids are not to be afraid of and they uncover a conspiracy that could threaten all children across the world.", 
-            "rating": "8.6", 
-            "votes": "22"
+
         }, 
         "2003": {
             "actors": [
@@ -2593,26 +2676,7 @@ var movies = {
             "votes": "58"
         }, 
         "2004": {
-            "actors": [
-                "Craig T. Nelson", 
-                "Holly Hunter", 
-                "Samuel L. Jackson", 
-                "Jason Lee", 
-                "Dominique Louis", 
-                "Teddy Newton", 
-                "Eli Fucile", 
-                "Maeve Andrews", 
-                "Spencer Fox", 
-                "Sarah Vowell"
-            ], 
-            "cover": "http://cf1.imgobject.com/posters/6d2/4d3ec06e5e73d622d80046d2/the-incredibles-cover.jpg", 
-            "directors": [
-                "Brad Bird"
-            ], 
-            "name": "The Incredibles", 
-            "overview": "Bob Parr has given up his superhero days to log in time as an insurance adjuster and raise his three children with his formerly heroic wife in suburbia. But when he receives a mysterious assignment, it's time to get back into costume.", 
-            "rating": "9.2", 
-            "votes": "13"
+
         }, 
         "2005": {
             "actors": [
@@ -2731,27 +2795,7 @@ var movies = {
             "votes": "8"
         }, 
         "2010": {
-            "actors": [
-                "Tom Hanks", 
-                "Tim Allen", 
-                "Joan Cusack", 
-                "Ned Beatty", 
-                "Michael Keaton", 
-                "Whoopi Goldberg", 
-                "Bonnie Hunt", 
-                "Wallace Shawn", 
-                "John Ratzenberger", 
-                "Don Rickles", 
-                "Estelle Harris"
-            ], 
-            "cover": "http://cf1.imgobject.com/posters/011/4cdb8b335e73d605e6000011/toy-story-3-cover.jpg", 
-            "directors": [
-                "Lee Unkrich"
-            ], 
-            "name": "Toy Story 3", 
-            "overview": "Woody, Buzz, and the rest of Andy's toys haven't been played with in years. With Andy about to go to college, the gang find themselves accidentally left at a nefarious day care center. The toys must band together to escape and return home to Andy.", 
-            "rating": "9.2", 
-            "votes": "49"
+
         }, 
         "2011": {
             "actors": [
@@ -3692,20 +3736,20 @@ var movies = {
             "votes": "14"
         }, 
         "1995": {
-            // "actors": [
-            //     "Atsuko Tanaka", 
-            //     "Iemasa Kayumi", 
-            //     "K\u00f4ichi Yamadera", 
-            //     "Tamio \u00d4ki"
-            // ], 
-            // "cover": "http://cf1.imgobject.com/posters/050/4c1883297b9aa10d2c000050/kokaku-kidotai-cover.jpg", 
-            // "directors": [
-            //     "Mamoru Oshii"
-            // ], 
-            // "name": "Ghost in the Shell", 
-            // "overview": "In the year 2029, the barriers of our world have been broken down by the net and by cybernetics, but this brings new vulnerability to humans in the form of brain-hacking. When a highly-wanted hacker known as 'The Puppetmaster' begins involving them in politics, Section 9, a group of cybernetically enhanced cops, are called in to investigate and stop the Puppetmaster.", 
-            // "rating": "9.0", 
-            // "votes": "9"
+            "actors": [
+                "Bruce Willis", 
+                "Brad Pitt", 
+                "Madeleine Stowe", 
+                "Christopher Plummer"
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/530/4bc9020d017a3c57fe000530/twelve-monkeys-cover.jpg", 
+            "directors": [
+                "Terry Gilliam"
+            ], 
+            "name": "Twelve Monkeys", 
+            "overview": "In the year 2035, convict James Cole volunteers reluctantly to be sent back in time by scientists to discover the origin of a deadly virus that wiped out nearly all of the earth's population decades earlier. But when Cole is sent mistakenly to 1990 instead of 1996, he's arrested and locked up in a mental hospital, where he meets a psychiatrist and the son of a famous virus expert.", 
+            "rating": "9.0", 
+            "votes": "9"
         }, 
         "1996": {
             "actors": [
@@ -4196,7 +4240,22 @@ var movies = {
             "rating": "8.6", 
             "votes": "9"
         }, 
-        "1994": {}, 
+        "1994": {
+            "actors": [
+                "Keanu Reeves", 
+                "Sandra Bullock", 
+                "Dennis Hopper",
+                "Jeff Daniels" 
+            ], 
+            "cover": "http://cf1.imgobject.com/posters/bed/4d8665517b9aa12edd003bed/speed-cover.jpg", 
+            "directors": [
+                "Jan de Bont"
+            ], 
+            "name": "Speed", 
+            "overview": "A young cop must prevent a bomb exploding aboard a city bus by keeping its speed above 50 mph.", 
+            "rating": "7.8", 
+            "votes": "6"          
+        }, 
         "1995": {
             "actors": [
                 "Dustin Hoffman", 
