@@ -20,8 +20,7 @@ p {
 }
 
 #grid-side {
-  background-color: #111;
-  background: url("/static/images/bg.png");
+  background: #111 url("/static/images/bg.png");
   position: absolute;
   left: 0;
   bottom: 0;
@@ -137,7 +136,11 @@ p {
   overflow: hidden;
 }
 
-
+#loading {
+  position: absolute;
+  background: transparent url("/static/images/loading.gif") center center no-repeat;
+  z-index: 300;
+}
  
 
 
@@ -199,8 +202,7 @@ p {
   bottom: 0;
   width: 249px;
   border-left: 1px solid #555;
-  background-color: #111;
-  background: url("/static/images/bg.png");
+  background: #111 url("/static/images/bg.png");
   z-index: 200;
   color: white;
 }
@@ -268,7 +270,7 @@ p {
 .availability {
   font-size: 12px;
   text-transform: uppercase;
-  color: #999;
+  color: #ccc;
 }
 
 .availability .circle {
@@ -276,15 +278,13 @@ p {
   width: 10px;
   height: 10px;
   border-radius: 5px;
-  margin-right: 5px;
+  margin-right: 3px;
 }
 .availability.out .circle {
   background-color: red;
-/*  box-shadow: 0 0 3px red;*/
 }
 .availability.in .circle {
   background-color: green;
-/*  box-shadow: 0 0 3px green;*/
 }
 
 .availability .due {

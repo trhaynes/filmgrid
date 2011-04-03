@@ -12,7 +12,7 @@
   <script type="text/javascript" charset="utf-8" src="/static/js/filmgrid.js"></script>
   <script type="text/javascript" charset="utf-8" src="/static/js/movies.js"></script>
 
-  <title>Filmgrid</title>
+  <title>FilmGrid</title>
 
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -32,6 +32,7 @@
   <div id="shadow-right"></div>
   
   <div id="grid-side">
+    <div id="loading"></div>
     <div id="move-left" class="nav-arrow"></div>
     <div id="move-right" class="nav-arrow"></div>
     <div id="move-up" class="nav-arrow"></div>
@@ -55,7 +56,7 @@
     <div class="inner">
     
       <!-- <div class="availability out"><span class="circle"></span> Checked out <span class="due">Due April 4</span></div> -->
-      <div class="availability in"><span class="circle"></span> Available</div>
+      <div class="availability in"><span class="circle"></span> <span class="text"></span></div>
               
       <div id="title"><span class="name"></span> <span class="year"></span></div>
         
