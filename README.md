@@ -1,5 +1,5 @@
-<img src="http://projects.tom-haynes.com/filmgrid/images/filmgrid.png" alt="Screenshot" width="100%" />
+<img src="http://projects.tom-haynes.com/filmgrid/images/filmgrid-noshadow.png" alt="Screenshot" />
 
-Browse films in two dimensions!
+A prototype for a new way of browsing films.
 
-http://projects.tom-haynes.com/filmgrid/
+Try it at http://projects.tom-haynes.com/filmgrid
