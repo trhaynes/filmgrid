@@ -2,4 +2,4 @@
 
 A prototype for a new way of browsing films.
 
-Try it at http://projects.tom-haynes.com/filmgrid
+Read more: http://portfolio.tom-haynes.com/#filmgrid
